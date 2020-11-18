@@ -15,6 +15,11 @@ app.get('/', (request, response) => {
   response.render('index')
 })
 
+app.get('/day', (request, response) => {
+  let date = new Date();
+  response.render('day', {day: date.getDay()});
+})
+
 app.post('/name', (request, response) => {
     response.render('name', { name: request.body.name })
 })
